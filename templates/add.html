@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="container right-panel-active">
+        <!-- Sign Up -->
+        <div class="container__form container--signup">
+            <form action="{%url 'add'%}" method="POST" class="form">
+                {% csrf_token %}
+                <h2 class="form__title">Addition</h2>
+                <input type="number" step="any" name="num1" placeholder="Enter a first number: " class="input" />
+                <input type="number" step="any" placeholder="Enter second number: " name="num2" class="input" />
+                <button type="submit" class="btn">Sum Up</button>
+            </form>
+        </div>
+    
+        <div class="container__overlay">
+            <div class="overlay">
+                <div class="overlay__panel overlay--left">
+                    <bold class="btn">Result: {{res}}</bold>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

@@ -1,10 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Calculator</h1>
-    <form action="add" method="POST">
-        {%csrf_token%}
-        Enter a first number:  <input type="number" name="num1"> <br> <br>
-        Enter second number:   <input type="number" name="num2">
-        <input type="submit">
-    </form>
+
+    <div class="container right-panel-active">
+        <!-- Sign Up -->
+        <div class="container__form container--signup">
+                <div class="form">
+                    <a class="btn" href="{%url 'add'%}">Addition</a>
+                    <a class="btn" href="{%url 'subtract'%}">Subtraction</a>
+                    <a class="btn" href="{%url 'multiply'%}">Multiplication</a>
+                    <a class="btn" href="{%url 'division'%}">Division</a>
+
+                </div>
+        </div>
+    
+        <div class="container__overlay">
+            <div class="overlay">
+                <div class="overlay__panel ">
+                    <h1>Welcome To Calculator App</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
+
